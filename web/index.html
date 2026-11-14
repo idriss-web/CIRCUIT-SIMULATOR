@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circuit Bench</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Circuit Bench</h1>
+  <label>Example
+    <select id="preset"><option value="">Choose a circuit…</option></select>
+  </label>
+  <label>Duration <input id="tend" value="10m" size="6" title="Simulated time, e.g. 10m = 10 ms"></label>
+  <label>Steps <input id="steps" value="2000" size="5"></label>
+  <label class="chk"><input type="checkbox" id="auto" checked> Run on every change</label>
+  <button id="run" class="primary">Simulate</button>
+  <button id="clear">Clear board</button>
+</header>
+<main>
+  <aside id="parts"><h2>Parts</h2></aside>
+  <section id="board-wrap">
+    <canvas id="board"></canvas>
+    <div id="hint">Pick a part, click the board to place it. Click one pin, then another, to wire them. Every circuit needs a ground.</div>
+  </section>
+  <aside id="inspector"></aside>
+  <section id="scope-wrap">
+    <div id="scope-bar">
+      <div class="tabs"><button data-mode="v" class="on">Voltage</button><button data-mode="i">Current</button></div>
+      <div id="chips"></div>
+      <span id="readout"></span>
+      <span id="status"></span>
+    </div>
+    <canvas id="scope"></canvas>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
